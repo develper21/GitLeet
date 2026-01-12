@@ -1,110 +1,104 @@
 <h1 align="center">
-  <a href="https://standardjs.com"><img src="assets/octocode.png" alt="LeetHub - Automatically sync your code to GitHub." width="400"></a>
+  <img src="assets/octocode.png" alt="GitLeet - Sync your LeetCode & GFG solutions to GitHub" width="200">
   <br>
-  <a href="https://chrome.google.com/webstore/detail/leethub/aciombdipochlnkbpcbgdpjffcfdbggi">LeetHub</a> - Automatically sync your code to GitHub.
-  <br>
-  <br>
+  GitLeet
 </h1>
 
+<h4 align="center">Automatically sync your LeetCode & GeeksforGeeks solutions to GitHub. Build your portfolio while you code.</h4>
+
 <p align="center">
-  <a href="https://github.com/QasimWani/LeetHub/blob/main/LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="license"/>
+  <a href="#license">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License">
   </a>
-  <a href="https://discord.gg/anXT9vErxu">
-    <img src="https://img.shields.io/discord/781373810251137074" alt="discord">
+  <a href="#">
+    <img src="https://img.shields.io/badge/chrome-v113+-googlechrome.svg?style=flat-square&logo=google-chrome&logoColor=white" alt="Chrome">
   </a>
-  <a href="https://chrome.google.com/webstore/detail/leethub/aciombdipochlnkbpcbgdpjffcfdbggi">
-    <img src="https://img.shields.io/chrome-web-store/v/aciombdipochlnkbpcbgdpjffcfdbggi.svg" alt="chrome-webstore"/>
-  </a>
-  <a href="https://chrome.google.com/webstore/detail/leethub/aciombdipochlnkbpcbgdpjffcfdbggi">
-    <img src="https://img.shields.io/chrome-web-store/d/aciombdipochlnkbpcbgdpjffcfdbggi.svg" alt="users">
-  </a>
-  <a href="https://github.com/QasimWani/LeetHub/graphs/contributors" alt="Contributors">
-    <img src="https://img.shields.io/github/contributors/QasimWani/LeetHub" />
-  </a>
-  <a href="https://twitter.com/intent/tweet?text=LeetHub%20-%20Automatically%20sync%20your%20code%20to%20GitHub%20after%20solving%20any%20leetcode%20problems!&url=https://github.com/QasimWani/LeetHub&hashtags=javascript,github,leetcode,coding,interview,chrome">
-    <img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social">
+  <a href="#">
+    <img src="https://img.shields.io/badge/platform-LeetCode%20%7C%20GeeksforGeeks-orange.svg?style=flat-square" alt="Platforms">
   </a>
 </p>
 
-<div align="center">
-  <a href="https://www.producthunt.com/posts/leethub?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-leethub" target="_blank">
-    <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=275757&theme=light" alt="LeetHub - Automatically sync your code b/w Leetcode & GitHub. | Product Hunt" />
-  </a>
-
-  [![Chrome](https://user-images.githubusercontent.com/53124886/111952712-34f12300-8aee-11eb-9fdd-ad579a1eb235.png)](https://chrome.google.com/webstore/detail/leethub/aciombdipochlnkbpcbgdpjffcfdbggi) [![Firefox](https://user-images.githubusercontent.com/53124886/126341427-4a4e57aa-767a-467e-83d2-b31fa3564441.png)](https://addons.mozilla.org/en-US/firefox/addon/leethub/)
-</div>
-
-
-
-## Top 5 Trending JavaScript Repositories
-
-
-## LeetHub progress and numbers (YouTube Video):
-[![LeetHub](https://user-images.githubusercontent.com/43754306/165053510-a757c95e-c3bc-49d5-995c-7a52368abd37.png)](https://www.youtube.com/watch?v=o33PIjqlOgw "LeetHub saves lives!")
-
-## What is LeetHub?
-<p>A chrome extension that automatically pushes your code to GitHub when you pass all tests on a <a href="http://leetcode.com/">Leetcode</a> problem. </p>
-
-
-## How fast is it really?
-### THIS FAST (~400ms, 530x speed improvement)!
-
-![](assets/extension/output.gif)
-
-## Why LeetHub?
-<p> <strong>1.</strong> Recruiters <em>want</em> to see your contributions to the Open Source community, be it through side projects, solving algorithms/data-structures, or contributing to existing OS projects.<br>
-As of now, GitHub is developers' #1 portfolio. LeetHub just makes it much easier (autonomous) to keep track of progress and contributions on the largest network of engineering community, GitHub.</p>
-
-<p> <strong>2.</strong> There's no easy way of accessing your leetcode problems in one place! <br>
-Moreover, pushing code manually to GitHub from Leetcode is very time consuming. So, why not just automate it entirely without spending a SINGLE additional second on it? </p>
-
-## How does LeetHub work?     
-
-<h4> Your LeetHub portfolio could look like <a href="https://github.com/tanyarajhans/LeetCode"> this</a>!  </h4>
-<p>It's as simple as:</p>
-<ol>
-  <li>After installation, launch LeetHub.</li>
-  <li>Click on "authorize with GitHub" button to automatically set up your account with LeetHub.</li>
-  <li>Setup an existing/new repository with LeetHub (private by default) by clicking "Get Started" button.</li>
-  <li>Begin Leetcoding! To view your progress, simply click on the extension!</li>
-</ol>
-
-
-#### BONUS: Star [this repository](https://github.com/QasimWani/LeetHub) for further development of features. If you want a particular feature, simply [request](https://github.com/QasimWani/LeetHub/labels/feature) for it!
-
-
-## Why did I build LeetHub?
-<p>
-The coding interview is arguably the most important part of your interview process, given you get the interview first. As someone who's received multiple internship offers from Fortune 100 companies, getting the interview in the first place is not easy!<br>
-And that's what LeetHub is supposed to do: indirectly improving your coding skills while improving your portfolio to ACE that interview at <em>insert_name_here</em>!
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#how-it-works">How It Works</a> •
+  <a href="#getting-started">Getting Started</a> •
+  <a href="#installation">Installation</a>
 </p>
 
-# Let's see you ACE that coding interview!
+---
 
+## 🚀 Introduction
 
-![leetcode view](assets/extension/leetcode.png)
+**GitLeet** is a premier browser extension designed for developers who want to showcase their problem-solving skills without the hassle of manual tracking. It seamlessly integrates your **LeetCode** and **GeeksforGeeks** submissions directly into a personal **GitHub** repository.
 
+In today's competitive tech landscape, your GitHub profile is your resume. GitLeet ensures every problem you solve contributes to your activity graph, building a robust portfolio of algorithms and data structures automatically.
 
-# How to set up LeetHub for local development?
+## ✨ Key Features
 
-<ol>
-  <li>Fork this repo and clone to your local machine</li>
-  <li>Go to <a href="chrome://extensions">chrome://extensions</a> </li>
-  <li>Enable <a href="https://www.mstoic.com/enable-developer-mode-in-chrome/">Developer mode</a> by toggling the switch on top right corner</li>
-  <li>Click 'Load unpacked'</li>
-  <li>Select the entire LeetHub folder</li>
-  <li>Run "npm run setup" to install the developer dependencies</li>
-</ol>
+*   **Automatic Syncing**: Instantly pushes your code to GitHub when you pass all test cases.
+*   **Dual Platform Support**: Works flawlessly with both **LeetCode** and **GeeksforGeeks**.
+*   **Set & Forget**: Once configured, it runs in the background. Focus on solving problems, not managing files.
+*   **Smart Organization**: Automatically organizes problems by difficulty and category in your repository.
+*   **Performance**: Lightning-fast execution using modern browser APIs (<400ms overhead).
 
-Other npm commands available:
+## 🛠 How It Works
 
-```
-npm run               Show list of commands available
-npm run format        Auto-format JavaScript, HTML/CSS
-npm run format-test   Test all code is formatted properly
-npm run lint          Lint JavaScript
-npm run lint-test     Test all code is linted properly
-```
+1.  **Solve**: Complete a problem on LeetCode or GeeksforGeeks.
+2.  **Verify**: Ensure all test cases pass.
+3.  **Sync**: GitLeet detects the success and automatically commits your solution (code + problem description) to your linked GitHub repository.
 
-#### And that should be it! Get Hacking...
+## 📦 Getting Started
+
+### Installation
+
+> **Note**: GitLeet is currently available for local installation.
+
+1.  **Clone** this repository to your local machine.
+    ```bash
+    git clone https://github.com/yourusername/GitLeet.git
+    ```
+2.  Open your browser (Chrome/Brave/Edge) and navigate to `chrome://extensions`.
+3.  Enable **Developer Mode** (toggle in the top right corner).
+4.  Click **Load Unpacked**.
+5.  Select the `GitLeet` folder you just cloned.
+
+### Configuration
+
+1.  Click the GitLeet extension icon in your browser toolbar.
+2.  Select **"Authorize with GitHub"** to link your account.
+3.  Choose to create a **new repository** (e.g., `my-leetcode-solutions`) or link an **existing one**.
+4.  That's it! Start coding on LeetCode or GFG, and watch your GitHub activity grow.
+
+## 🤝 Contributing
+
+We welcome contributions to make GitLeet even better!
+
+1.  Fork the project.
+2.  Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4.  Push to the branch (`git push origin feature/AmazingFeature`).
+5.  Open a Pull Request.
+
+### Local Development Setup
+
+To modify the extension code:
+
+1.  Install dependencies:
+    ```bash
+    npm install
+    ```
+2.  Use standard npm commands:
+    ```bash
+    npm run lint       # Check for style issues
+    npm run format     # Auto-format code
+    ```
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+<p align="center">
+  <sub>Built with ❤️ for the developer community.</sub>
+</p>
