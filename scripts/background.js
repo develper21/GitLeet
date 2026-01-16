@@ -8,13 +8,15 @@ function handleMessage(request) {
     chrome.storage.local.set(
       { leethub_username: request.username },
       () => {
-        window.localStorage.leethub_username = request.username;
+        // Service worker doesn't have window.localStorage
+        // Storage is handled by chrome.storage.local
       },
     );
 
     /* Set token */
     chrome.storage.local.set({ leethub_token: request.token }, () => {
-      window.localStorage[request.KEY] = request.token;
+      // Service worker doesn't have window.localStorage
+      // Storage is handled by chrome.storage.local
     });
 
     /* Close pipe */
@@ -22,9 +24,14 @@ function handleMessage(request) {
       console.log('Closed pipe.');
     });
 
-    chrome.tabs.getSelected(null, function (tab) {
-      chrome.tabs.remove(tab.id);
-    });
+    chrome.tabs.query(
+      { active: true, currentWindow: true },
+      (tabs) => {
+        if (tabs[0]) {
+          chrome.tabs.remove(tabs[0].id);
+        }
+      },
+    );
 
     /* Go to onboarding for UX */
     const urlOnboarding = chrome.runtime.getURL('welcome.html');
@@ -37,9 +44,14 @@ function handleMessage(request) {
     alert(
       'Something went wrong while trying to authenticate your profile!',
     );
-    chrome.tabs.getSelected(null, function (tab) {
-      chrome.tabs.remove(tab.id);
-    });
+    chrome.tabs.query(
+      { active: true, currentWindow: true },
+      (tabs) => {
+        if (tabs[0]) {
+          chrome.tabs.remove(tabs[0].id);
+        }
+      },
+    );
   }
 }
 
