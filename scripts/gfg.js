@@ -11,17 +11,15 @@ const README_MSG = 'Create README - LeetHub';
 const SUBMIT_MSG = 'Added solution - LeetHub';
 const UPDATE_MSG = 'Updated solution - LeetHub';
 let START_MONITOR = true;
-const toKebabCase = (string) => {
-  return string
+const toKebabCase = (string) =>
+  string
     .replace(/[^a-zA-Z0-9\. ]/g, '') // remove special chars
     .replace(/([a-z])([A-Z])/g, '$1-$2') // get all lowercase letters that are near to uppercase ones
     .replace(/[\s_]+/g, '-') // replace all spaces and low dash
     .toLowerCase(); // convert to lower case
-};
-
 function findGfgLanguage() {
-  const ele = document.getElementsByClassName('divider text')[0]
-    .innerText;
+  const ele =
+    document.getElementsByClassName('divider text')[0].innerText;
   const lang = ele.split('(')[0].trim();
   if (lang.length > 0 && languages[lang]) {
     return languages[lang];
@@ -30,8 +28,9 @@ function findGfgLanguage() {
 }
 
 function findTitle() {
-  const ele = document.querySelector('[class^="problems_header_content__title"] > h3')
-    .innerText;
+  const ele = document.querySelector(
+    '[class^="problems_header_content__title"] > h3',
+  ).innerText;
   if (ele != null) {
     return ele;
   }
@@ -39,7 +38,9 @@ function findTitle() {
 }
 
 function findDifficulty() {
-  const ele = document.querySelectorAll('[class^="problems_header_description"]')[0].children[0].innerText;
+  const ele = document.querySelectorAll(
+    '[class^="problems_header_description"]',
+  )[0].children[0].innerText;
 
   if (ele != null) {
     if (ele.trim() == 'Basic' || ele.trim() === 'School') {
@@ -51,12 +52,13 @@ function findDifficulty() {
 }
 
 function getProblemStatement() {
-  const ele = document.querySelector('[class^="problems_problem_content"]');
+  const ele = document.querySelector(
+    '[class^="problems_problem_content"]',
+  );
   return `${ele.outerHTML}`;
 }
 
 function getCode() {
-
   const scriptContent = `
   var editor = ace.edit("ace-editor");
   var editorContent = editor.getValue();
@@ -103,14 +105,22 @@ const gfgLoader = setInterval(() => {
       'practice.geeksforgeeks.org/problems',
     )
   ) {
+    const submitBtn = document
+      .evaluate(
+        ".//button[text()='Submit']",
+        document.body,
+        null,
+        XPathResult.ANY_TYPE,
+        null,
+      )
+      .iterateNext();
 
-    const submitBtn = document.evaluate(".//button[text()='Submit']", document.body, null, XPathResult.ANY_TYPE, null).iterateNext();
-
-    submitBtn.addEventListener('click', function () {
+    submitBtn.addEventListener('click', () => {
       START_MONITOR = true;
       const submission = setInterval(() => {
-        const output = document.querySelectorAll('[class^="problems_content"]')[0]
-          .innerText;
+        const output = document.querySelectorAll(
+          '[class^="problems_content"]',
+        )[0].innerText;
         if (
           output.includes('Problem Solved Successfully') &&
           START_MONITOR
@@ -161,7 +171,7 @@ const gfgLoader = setInterval(() => {
               // }
 
               if (code !== '') {
-                setTimeout(function () {
+                setTimeout(() => {
                   uploadGit(
                     btoa(unescape(encodeURIComponent(code))),
                     probName,
