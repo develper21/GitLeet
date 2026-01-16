@@ -1,10 +1,6 @@
-const option = () => {
-  return $('#type').val();
-};
+const option = () => $('#type').val();
 
-const repositoryName = () => {
-  return $('#name').val().trim();
-};
+const repositoryName = () => $('#name').val().trim();
 
 /* Status codes for creating of repo */
 
@@ -88,7 +84,7 @@ const createRepo = (token, name) => {
   data = JSON.stringify(data);
 
   const xhr = new XMLHttpRequest();
-  xhr.addEventListener('readystatechange', function () {
+  xhr.addEventListener('readystatechange', () => {
     if (xhr.readyState === 4) {
       statusCode(JSON.parse(xhr.responseText), xhr.status, name);
     }
@@ -146,7 +142,7 @@ const linkRepo = (token, name) => {
   const AUTHENTICATION_URL = `https://api.github.com/repos/${name}`;
 
   const xhr = new XMLHttpRequest();
-  xhr.addEventListener('readystatechange', function () {
+  xhr.addEventListener('readystatechange', () => {
     if (xhr.readyState === 4) {
       const res = JSON.parse(xhr.responseText);
       const bool = linkStatusCode(xhr.status, name);
