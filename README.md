@@ -11,7 +11,7 @@
     <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License">
   </a>
   <a href="#">
-    <img src="https://img.shields.io/badge/chrome-v113+-googlechrome.svg?style=flat-square&logo=google-chrome&logoColor=white" alt="Chrome">
+    <img src="https://img.shields.io/badge/chrome-v88+-googlechrome.svg?style=flat-square&logo=google-chrome&logoColor=white" alt="Chrome">
   </a>
   <a href="#">
     <img src="https://img.shields.io/badge/platform-LeetCode%20%7C%20GeeksforGeeks-orange.svg?style=flat-square" alt="Platforms">
@@ -29,7 +29,9 @@
 
 ## 🚀 Introduction
 
-**GitLeet** is a premier browser extension designed for developers who want to showcase their problem-solving skills without the hassle of manual tracking. It seamlessly integrates your **LeetCode** and **GeeksforGeeks** submissions directly into a personal **GitHub** repository.
+**GitLeet v2.0** is a premier browser extension designed for developers who want to showcase their problem-solving skills without the hassle of manual tracking. It seamlessly integrates your **LeetCode** and **GeeksforGeeks** submissions directly into a personal **GitHub** repository.
+
+**🆕 Manifest V3 Compatible**: Fully updated to work with the latest Chrome extension standards for enhanced security and performance.
 
 In today's competitive tech landscape, your GitHub profile is your resume. GitLeet ensures every problem you solve contributes to your activity graph, building a robust portfolio of algorithms and data structures automatically.
 
@@ -51,7 +53,7 @@ In today's competitive tech landscape, your GitHub profile is your resume. GitLe
 
 ### Installation
 
-> **Note**: GitLeet is currently available for local installation.
+> **Note**: GitLeet v2.0 is now Manifest V3 compatible and works with modern Chrome browsers.
 
 1.  **Clone** this repository to your local machine.
     ```bash
@@ -61,6 +63,11 @@ In today's competitive tech landscape, your GitHub profile is your resume. GitLe
 3.  Enable **Developer Mode** (toggle in the top right corner).
 4.  Click **Load Unpacked**.
 5.  Select the `GitLeet` folder you just cloned.
+6.  Install dependencies:
+    ```bash
+    cd GitLeet
+    npm install
+    ```
 
 ### Configuration
 
