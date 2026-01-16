@@ -1,19 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/popup.css" />
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"
-    ></script>
-
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
   </head>
 
   <body>
@@ -33,8 +22,7 @@
               >Leet<span style="color: #f18500">Hub</span></strong
             >
           </p>
-          <button id="authenticate" class="ui secondary button">
-            <i class="icon github"></i>
+          <button id="authenticate" class="secondary-button">
             Authenticate
           </button>
         </div>
@@ -52,20 +40,19 @@
             id="hook_URL"
             href=""
             target="blank"
-            class="ui secondary button"
+            class="secondary-button"
           >
-            <i class="icon github"></i>
             Set up Hook
           </a>
         </div>
 
         <!-- Commit mode -->
         <div id="commit_mode" hidden>
-          <p id="repo_url" class="ui small header"></p>
+          <p id="repo_url" class="small-header"></p>
           <p class="onboarding">
             Problems Solved: <span id="p_solved">0</span>
           </p>
-          <p class="ui small header">
+          <p class="small-header">
             <span style="color: #5cb85c">Easy:</span>
             <span
               id="p_solved_easy"
@@ -86,7 +73,7 @@
             </span>
           </p>
 
-          <div class="ui small header">
+          <div class="small-header">
             Want more features?
             <a
               style="color: cadetblue !important"
@@ -100,20 +87,24 @@
 
       <!-- Generate Socials -->
       <div id="socials" class="sixteen wide column">
-        <a href="https://github.com/QasimWani/LeetHub" target="_blank"
-          ><i class="ui black github icon"></i
-        ></a>
+        <a
+          href="https://github.com/QasimWani/LeetHub"
+          target="_blank"
+        >
+          <span class="social-icon">📦</span>
+        </a>
         <a
           href="https://www.linkedin.com/in/qasimwani"
           target="_blank"
-          ><i class="ui linkedin icon"></i
-        ></a>
-        <a href="mailto:qasim31wani@gmail.com" target="_blank"
-          ><i class="ui red envelope icon"></i
-        ></a>
-        <a id="welcome_URL" href="" target="_blank"
-          ><i class="ui grey globe icon"></i
-        ></a>
+        >
+          <span class="social-icon">💼</span>
+        </a>
+        <a href="mailto:qasim31wani@gmail.com" target="_blank">
+          <span class="social-icon">✉️</span>
+        </a>
+        <a id="welcome_URL" href="" target="_blank">
+          <span class="social-icon">🌐</span>
+        </a>
       </div>
     </div>
 
