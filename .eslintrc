@@ -1,0 +1,27 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jquery": true,
+    "webextensions": true
+  },
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "warn",
+    "no-console": "warn",
+    "no-undef": "warn",
+    "func-names": "warn",
+    "prefer-arrow-callback": "warn",
+    "arrow-body-style": "warn",
+    "no-use-before-define": "warn",
+    "no-param-reassign": "warn",
+    "prefer-destructuring": "warn",
+    "no-shadow": "warn",
+    "no-unused-vars": "warn",
+    "eqeqeq": "warn",
+    "no-cond-assign": "warn",
+    "no-constant-condition": "warn"
+  }
+}
