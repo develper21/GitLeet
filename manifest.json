@@ -1,8 +1,14 @@
 {
   "manifest_version": 3,
+<<<<<<< HEAD
   "name": "GitLeet",
   "description": "Automatically integrate your Leetcode & GeeksforGeeks submissions to GitHub",
   "homepage_url": "https://github.com/develper21/GitLeet",
+=======
+  "name": "LeetHub",
+  "description": "Automatically integrate your Leetcode & GeeksforGeeks submissions to GitHub",
+  "homepage_url": "https://github.com/QasimWani/LeetHub",
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
   "version": "2.0.0",
   "author": "Qasim Wani",
   "action": {
@@ -15,7 +21,11 @@
     "128": "assets/thumbnail.png"
   },
   "background": {
+<<<<<<< HEAD
     "scripts": ["scripts/background.js"]
+=======
+    "service_worker": "scripts/background.js"
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
   },
   "host_permissions": [
     "https://github.com/*",

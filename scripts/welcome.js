@@ -79,7 +79,11 @@ const createRepo = (token, name) => {
     private: true,
     auto_init: true,
     description:
+<<<<<<< HEAD
       'Collection of LeetCode questions to ace the coding interview! - Created using [GitLeet](https://github.com/QasimWani/GitLeet)',
+=======
+      'Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)',
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
   };
   data = JSON.stringify(data);
 
@@ -103,7 +107,11 @@ const linkStatusCode = (status, name) => {
     case 301:
       $('#success').hide();
       $('#error').html(
+<<<<<<< HEAD
         `Error linking <a target="blank" href="${`https://github.com/${name}`}">${name}</a> to GitLeet. <br> This repository has been moved permenantly. Try creating a new one.`,
+=======
+        `Error linking <a target="blank" href="${`https://github.com/${name}`}">${name}</a> to LeetHub. <br> This repository has been moved permenantly. Try creating a new one.`,
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
       );
       $('#error').show();
       break;
@@ -111,7 +119,11 @@ const linkStatusCode = (status, name) => {
     case 403:
       $('#success').hide();
       $('#error').html(
+<<<<<<< HEAD
         `Error linking <a target="blank" href="${`https://github.com/${name}`}">${name}</a> to GitLeet. <br> Forbidden action. Please make sure you have the right access to this repository.`,
+=======
+        `Error linking <a target="blank" href="${`https://github.com/${name}`}">${name}</a> to LeetHub. <br> Forbidden action. Please make sure you have the right access to this repository.`,
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
       );
       $('#error').show();
       break;
@@ -119,7 +131,11 @@ const linkStatusCode = (status, name) => {
     case 404:
       $('#success').hide();
       $('#error').html(
+<<<<<<< HEAD
         `Error linking <a target="blank" href="${`https://github.com/${name}`}">${name}</a> to GitLeet. <br> Resource not found. Make sure you enter the right repository name.`,
+=======
+        `Error linking <a target="blank" href="${`https://github.com/${name}`}">${name}</a> to LeetHub. <br> Resource not found. Make sure you enter the right repository name.`,
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
       );
       $('#error').show();
       break;
@@ -152,7 +168,11 @@ const linkRepo = (token, name) => {
           // unable to gain access to repo in commit mode. Must switch to hook mode.
           /* Set mode type to hook */
           chrome.storage.local.set({ mode_type: 'hook' }, () => {
+<<<<<<< HEAD
             console.log(`Error linking ${name} to GitLeet`);
+=======
+            console.log(`Error linking ${name} to LeetHub`);
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
           });
           /* Set Repo Hook to NONE */
           chrome.storage.local.set({ leethub_hook: null }, () => {
@@ -172,7 +192,11 @@ const linkRepo = (token, name) => {
             () => {
               $('#error').hide();
               $('#success').html(
+<<<<<<< HEAD
                 `Successfully linked <a target="blank" href="${res.html_url}">${name}</a> to GitLeet. Start <a href="http://leetcode.com">LeetCoding</a> now!`,
+=======
+                `Successfully linked <a target="blank" href="${res.html_url}">${name}</a> to LeetHub. Start <a href="http://leetcode.com">LeetCoding</a> now!`,
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
               );
               $('#success').show();
               $('#unlink').show();
@@ -266,7 +290,11 @@ $('#hook_button').on('click', () => {
       if (token === null || token === undefined) {
         /* Not authorized yet. */
         $('#error').text(
+<<<<<<< HEAD
           'Authorization error - Grant GitLeet access to your GitHub account to continue (launch extension to proceed)',
+=======
+          'Authorization error - Grant LeetHub access to your GitHub account to continue (launch extension to proceed)',
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
         );
         $('#error').show();
         $('#success').hide();
@@ -278,7 +306,11 @@ $('#hook_button').on('click', () => {
           if (!username) {
             /* Improper authorization. */
             $('#error').text(
+<<<<<<< HEAD
               'Improper Authorization error - Grant GitLeet access to your GitHub account to continue (launch extension to proceed)',
+=======
+              'Improper Authorization error - Grant LeetHub access to your GitHub account to continue (launch extension to proceed)',
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
             );
             $('#error').show();
             $('#success').hide();
@@ -310,7 +342,11 @@ chrome.storage.local.get('mode_type', (data) => {
       if (token === null || token === undefined) {
         /* Not authorized yet. */
         $('#error').text(
+<<<<<<< HEAD
           'Authorization error - Grant GitLeet access to your GitHub account to continue (click GitLeet extension on the top right to proceed)',
+=======
+          'Authorization error - Grant LeetHub access to your GitHub account to continue (click LeetHub extension on the top right to proceed)',
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
         );
         $('#error').show();
         $('#success').hide();
@@ -325,7 +361,11 @@ chrome.storage.local.get('mode_type', (data) => {
           if (!hook) {
             /* Not authorized yet. */
             $('#error').text(
+<<<<<<< HEAD
               'Improper Authorization error - Grant GitLeet access to your GitHub account to continue (click GitLeet extension on the top right to proceed)',
+=======
+              'Improper Authorization error - Grant LeetHub access to your GitHub account to continue (click LeetHub extension on the top right to proceed)',
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
             );
             $('#error').show();
             $('#success').hide();

@@ -22,9 +22,15 @@ const languages = {
 };
 
 /* Commit messages */
+<<<<<<< HEAD
 const readmeMsg = 'Create README - GitLeet';
 const discussionMsg = 'Prepend discussion post - GitLeet';
 const createNotesMsg = 'Attach NOTES - GitLeet';
+=======
+const readmeMsg = 'Create README - LeetHub';
+const discussionMsg = 'Prepend discussion post - LeetHub';
+const createNotesMsg = 'Attach NOTES - LeetHub';
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
 
 // problem types
 const NORMAL_PROBLEM = 0;
@@ -86,11 +92,15 @@ const upload = (
 
         chrome.storage.local.get('stats', (data2) => {
           let { stats } = data2;
+<<<<<<< HEAD
           if (
             stats === null ||
             Object.keys(stats).length === 0 ||
             stats === undefined
           ) {
+=======
+          if (stats === null || stats === {} || stats === undefined) {
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
             // create stats object
             stats = {};
             stats.solved = 0;
@@ -110,7 +120,13 @@ const upload = (
           }
           stats.sha[filePath] = updatedSha; // update sha key.
           chrome.storage.local.set({ stats }, () => {
+<<<<<<< HEAD
             // Successfully committed to GitHub
+=======
+            console.log(
+              `Successfully committed ${filename} to github`,
+            );
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
 
             // if callback is defined, call it
             if (cb !== undefined) {
@@ -255,18 +271,25 @@ function uploadGit(
   });
 }
 
+<<<<<<< HEAD
 /* Util function to check if an element exists */
 function checkElem(elem) {
   return elem && elem.length > 0;
 }
 
+=======
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
 /* Function for finding and parsing the full code. */
 /* - At first find the submission details url. */
 /* - Then send a request for the details page. */
 /* - Finally, parse the code from the html reponse. */
 /* - Also call the callback if available when upload is success */
 function findCode(
+<<<<<<< HEAD
   uploadGitFn,
+=======
+  uploadGit,
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
   problemName,
   fileName,
   msg,
@@ -288,11 +311,19 @@ function findCode(
     submissionURL = submissionRef.href;
   }
 
+<<<<<<< HEAD
   if (submissionURL !== undefined) {
     /* Request for the submission details page */
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = () => {
       if (this.readyState === 4 && this.status === 200) {
+=======
+  if (submissionURL != undefined) {
+    /* Request for the submission details page */
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
         /* received submission details as html reponse. */
         const doc = new DOMParser().parseFromString(
           this.responseText,
@@ -301,7 +332,11 @@ function findCode(
         /* the response has a js object called pageData. */
         /* Pagedata has the details data with code about that submission */
         const scripts = doc.getElementsByTagName('script');
+<<<<<<< HEAD
         for (let i = 0; i < scripts.length; i += 1) {
+=======
+        for (let i = 0; i < scripts.length; i++) {
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
           const text = scripts[i].innerText;
           if (text.includes('pageData')) {
             /* Considering the pageData as text and extract the substring
@@ -319,7 +354,11 @@ function findCode(
               lastInverted,
             );
             /* The code has some unicode. Replacing all unicode with actual characters */
+<<<<<<< HEAD
             const code = codeUnicoded.replace(
+=======
+            var code = codeUnicoded.replace(
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
               /\\u[\dA-F]{4}/gi,
               (match) =>
                 String.fromCharCode(
@@ -327,14 +366,26 @@ function findCode(
                 ),
             );
 
+<<<<<<< HEAD
             let resultRuntime;
             let resultMemory;
             if (text.includes('runtime') && text.includes('memory')) {
+=======
+            /*
+            for a submisssion in explore section we do not get probStat beforehand
+            so, parse statistics from submisson page
+            */
+            if (!msg) {
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
               slicedText = text.slice(
                 text.indexOf('runtime'),
                 text.indexOf('memory'),
               );
+<<<<<<< HEAD
               resultRuntime = slicedText.slice(
+=======
+              const resultRuntime = slicedText.slice(
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
                 slicedText.indexOf("'") + 1,
                 slicedText.lastIndexOf("'"),
               );
@@ -342,6 +393,7 @@ function findCode(
                 text.indexOf('memory'),
                 text.indexOf('total_correct'),
               );
+<<<<<<< HEAD
               resultMemory = slicedText.slice(
                 slicedText.indexOf("'") + 1,
                 slicedText.lastIndexOf("'"),
@@ -357,12 +409,26 @@ function findCode(
               if (!finalMsg.includes('Time:')) {
                 finalMsg = `Time: N/A, Memory: N/A - GitLeet`;
               }
+=======
+              const resultMemory = slicedText.slice(
+                slicedText.indexOf("'") + 1,
+                slicedText.lastIndexOf("'"),
+              );
+              msg = `Time: ${resultRuntime}, Memory: ${resultMemory} - LeetHub`;
+            }
+
+            if (code != null) {
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
               setTimeout(() => {
                 uploadGit(
                   btoa(unescape(encodeURIComponent(code))),
                   problemName,
                   fileName,
+<<<<<<< HEAD
                   finalMsg,
+=======
+                  msg,
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
                   action,
                   true,
                   cb,
@@ -379,6 +445,23 @@ function findCode(
   }
 }
 
+<<<<<<< HEAD
+=======
+/* Main parser function for the code */
+function parseCode() {
+  const e = document.getElementsByClassName('CodeMirror-code');
+  if (e !== undefined && e.length > 0) {
+    const elem = e[0];
+    let parsedCode = '';
+    const textArr = elem.innerText.split('\n');
+    for (let i = 1; i < textArr.length; i += 2) {
+      parsedCode += `${textArr[i]}\n`;
+    }
+    return parsedCode;
+  }
+  return null;
+}
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
 
 /* Util function to check if an element exists */
 function checkElem(elem) {
@@ -397,6 +480,7 @@ function convertToSlug(string) {
     .replace(/\s+/g, '-') // Replace spaces with -
     .replace(p, (c) => b.charAt(a.indexOf(c))) // Replace special characters
     .replace(/&/g, '-and-') // Replace & with 'and'
+<<<<<<< HEAD
     .replace(/[^\w-]+/g, '') // Remove all non-word characters
     .replace(/--+/g, '-') // Replace multiple - with single -
     .replace(/^-+/, '') // Trim - from start of text
@@ -411,6 +495,13 @@ function addLeadingZeros(title) {
   return title;
 }
 
+=======
+    .replace(/[^\w\-]+/g, '') // Remove all non-word characters
+    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+    .replace(/^-+/, '') // Trim - from start of text
+    .replace(/-+$/, ''); // Trim - from end of text
+}
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
 function getProblemNameSlug() {
   const questionElem = document.getElementsByClassName(
     'content__u3I1 question-content__JfgR',
@@ -433,6 +524,18 @@ function getProblemNameSlug() {
   return addLeadingZeros(convertToSlug(questionTitle));
 }
 
+<<<<<<< HEAD
+=======
+function addLeadingZeros(title) {
+  const maxTitlePrefixLength = 4;
+  const len = title.split('-')[0].length;
+  if (len < maxTitlePrefixLength) {
+    return '0'.repeat(4 - len) + title;
+  }
+  return title;
+}
+
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
 /* Parser function for the question and tags */
 function parseQuestion() {
   let questionUrl = window.location.href;
@@ -505,7 +608,11 @@ function parseStats() {
   const spacePercentile = probStats[3].textContent;
 
   // Format commit message
+<<<<<<< HEAD
   return `Time: ${time} (${timePercentile}), Space: ${space} (${spacePercentile}) - GitLeet`;
+=======
+  return `Time: ${time} (${timePercentile}), Space: ${space} (${spacePercentile}) - LeetHub`;
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
 }
 
 document.addEventListener('click', (event) => {
@@ -555,9 +662,13 @@ function getNotesIfAny() {
   if (document.URL.startsWith('https://leetcode.com/explore/'))
     return '';
 
+<<<<<<< HEAD
   let notes = '';
   let notesdiv;
   let text;
+=======
+  notes = '';
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
   if (
     checkElem(document.getElementsByClassName('notewrap__eHkN')) &&
     checkElem(
@@ -566,6 +677,7 @@ function getNotesIfAny() {
         .getElementsByClassName('CodeMirror-code'),
     )
   ) {
+<<<<<<< HEAD
     const [notesdiv] = document
       .getElementsByClassName('notewrap__eHkN')[0]
       .getElementsByClassName('CodeMirror-code');
@@ -578,6 +690,17 @@ function getNotesIfAny() {
           if (text) {
             notes = `${notes}\n${text.trim()}`.trim();
           }
+=======
+    notesdiv = document
+      .getElementsByClassName('notewrap__eHkN')[0]
+      .getElementsByClassName('CodeMirror-code')[0];
+    if (notesdiv) {
+      for (i = 0; i < notesdiv.childNodes.length; i++) {
+        if (notesdiv.childNodes[i].childNodes.length == 0) continue;
+        text = notesdiv.childNodes[i].childNodes[0].innerText;
+        if (text) {
+          notes = `${notes}\n${text.trim()}`.trim();
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
         }
       }
     }
@@ -586,6 +709,10 @@ function getNotesIfAny() {
 }
 
 const loader = setInterval(() => {
+<<<<<<< HEAD
+=======
+  const code = null;
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
   let probStatement = null;
   let probStats = null;
   let probType;
@@ -598,7 +725,11 @@ const loader = setInterval(() => {
     successTag[0].className === 'success__3Ai7' &&
     successTag[0].innerText.trim() === 'Success'
   ) {
+<<<<<<< HEAD
     // console.log(successTag[0]);
+=======
+    console.log(successTag[0]);
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
     success = true;
     probType = NORMAL_PROBLEM;
   }
@@ -627,7 +758,11 @@ const loader = setInterval(() => {
         resultState.classList.add('marked_as_success');
         break;
       default:
+<<<<<<< HEAD
         // Error: Unknown problem type
+=======
+        console.error(`Unknown problem type ${probType}`);
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
         return;
     }
 
@@ -663,11 +798,19 @@ const loader = setInterval(() => {
 
       /* get the notes and upload it */
       /* only upload notes if there is any */
+<<<<<<< HEAD
       const notes = getNotesIfAny();
       if (notes.length > 0) {
         setTimeout(() => {
           if (notes !== undefined && notes.length !== 0) {
             // Create Notes
+=======
+      notes = getNotesIfAny();
+      if (notes.length > 0) {
+        setTimeout(() => {
+          if (notes != undefined && notes.length != 0) {
+            console.log('Create Notes');
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
             // means we can upload the notes too
             uploadGit(
               btoa(unescape(encodeURIComponent(notes))),
@@ -707,7 +850,11 @@ const loader = setInterval(() => {
 function startUploadCountDown() {
   uploadState.uploading = true;
   uploadState.countdown = setTimeout(() => {
+<<<<<<< HEAD
     if (uploadState.uploading) {
+=======
+    if ((uploadState.uploading = true)) {
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
       // still uploading, then it failed
       uploadState.uploading = false;
       markUploadFailed();
@@ -719,7 +866,11 @@ function startUploadCountDown() {
 function insertToAnchorElement(elem) {
   if (document.URL.startsWith('https://leetcode.com/explore/')) {
     // means we are in explore page
+<<<<<<< HEAD
     const action = document.getElementsByClassName('action');
+=======
+    action = document.getElementsByClassName('action');
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
     if (
       checkElem(action) &&
       checkElem(action[0].getElementsByClassName('row')) &&
@@ -732,6 +883,7 @@ function insertToAnchorElement(elem) {
         .getElementsByClassName('row')[0]
         .getElementsByClassName('col-sm-6').length > 1
     ) {
+<<<<<<< HEAD
       const target = action[0]
         .getElementsByClassName('row')[0]
         .getElementsByClassName('col-sm-6')[1];
@@ -740,37 +892,61 @@ function insertToAnchorElement(elem) {
         const firstChild = target.childNodes[0];
         firstChild.prepend(elem);
       }
+=======
+      target = action[0]
+        .getElementsByClassName('row')[0]
+        .getElementsByClassName('col-sm-6')[1];
+      elem.className = 'pull-left';
+      if (target.childNodes.length > 0)
+        target.childNodes[0].prepend(elem);
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
     }
   } else if (
     checkElem(document.getElementsByClassName('action__38Xc'))
   ) {
+<<<<<<< HEAD
     const target = document.getElementsByClassName('action__38Xc')[0];
     elem.className = 'runcode-wrapper__8rXm';
     if (target.childNodes.length > 0) {
       const firstChild = target.childNodes[0];
       firstChild.prepend(elem);
     }
+=======
+    target = document.getElementsByClassName('action__38Xc')[0];
+    elem.className = 'runcode-wrapper__8rXm';
+    if (target.childNodes.length > 0)
+      target.childNodes[0].prepend(elem);
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
   }
 }
 
 /* start upload will inject a spinner on left side to the "Run Code" button */
 function startUpload() {
   try {
+<<<<<<< HEAD
     let elem = document.getElementById(
       'leethub_progress_anchor_element',
     );
+=======
+    elem = document.getElementById('leethub_progress_anchor_element');
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
     if (!elem) {
       elem = document.createElement('span');
       elem.id = 'leethub_progress_anchor_element';
       elem.style = 'margin-right: 20px;padding-top: 2px;';
     }
     elem.innerHTML = `<div id="leethub_progress_elem" class="leethub_progress"></div>`;
+<<<<<<< HEAD
     insertToAnchorElement(elem);
+=======
+    target = insertToAnchorElement(elem);
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
     // start the countdown
     startUploadCountDown();
   } catch (error) {
     // generic exception handler for time being so that existing feature doesnt break but
     // error gets logged
+<<<<<<< HEAD
     // Error logged for debugging
   }
 }
@@ -781,6 +957,18 @@ function markUploaded() {
   if (elem) {
     elem.className = '';
     const style =
+=======
+    console.log(error);
+  }
+}
+
+/* This will create a tick mark before "Run Code" button signalling LeetHub has done its job */
+function markUploaded() {
+  elem = document.getElementById('leethub_progress_elem');
+  if (elem) {
+    elem.className = '';
+    style =
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
       'display: inline-block;transform: rotate(45deg);height:24px;width:12px;border-bottom:7px solid #78b13f;border-right:7px solid #78b13f;';
     elem.style = style;
   }
@@ -788,10 +976,17 @@ function markUploaded() {
 
 /* This will create a failed tick mark before "Run Code" button signalling that upload failed */
 function markUploadFailed() {
+<<<<<<< HEAD
   const elem = document.getElementById('leethub_progress_elem');
   if (elem) {
     elem.className = '';
     const style =
+=======
+  elem = document.getElementById('leethub_progress_elem');
+  if (elem) {
+    elem.className = '';
+    style =
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
       'display: inline-block;transform: rotate(45deg);height:24px;width:12px;border-bottom:7px solid red;border-right:7px solid red;';
     elem.style = style;
   }
@@ -799,7 +994,11 @@ function markUploadFailed() {
 
 /* Sync to local storage */
 chrome.storage.local.get('isSync', (data) => {
+<<<<<<< HEAD
   const keys = [
+=======
+  keys = [
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
     'leethub_token',
     'leethub_username',
     'pipe_leethub',
@@ -809,6 +1008,7 @@ chrome.storage.local.get('isSync', (data) => {
   ];
   if (!data || !data.isSync) {
     keys.forEach((key) => {
+<<<<<<< HEAD
       chrome.storage.sync.get(key, (syncData) => {
         chrome.storage.local.set({ [key]: syncData[key] });
       });
@@ -821,6 +1021,23 @@ chrome.storage.local.get('isSync', (data) => {
   }
 });
 
+=======
+      chrome.storage.sync.get(key, (data) => {
+        chrome.storage.local.set({ [key]: data[key] });
+      });
+    });
+    chrome.storage.local.set({ isSync: true }, (data) => {
+      console.log('LeetHub Synced to local values');
+    });
+  } else {
+    console.log('LeetHub Local storage already synced!');
+  }
+});
+
+// inject the style
+injectStyle();
+
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
 /* inject css style required for the upload progress feature */
 function injectStyle() {
   const style = document.createElement('style');
@@ -828,6 +1045,9 @@ function injectStyle() {
     '.leethub_progress {pointer-events: none;width: 2.0em;height: 2.0em;border: 0.4em solid transparent;border-color: #eee;border-top-color: #3E67EC;border-radius: 50%;animation: loadingspin 1s linear infinite;} @keyframes loadingspin { 100% { transform: rotate(360deg) }}';
   document.head.append(style);
 }
+<<<<<<< HEAD
 
 // inject the style
 injectStyle();
+=======
+>>>>>>> be465d8bc560770f834f0f8abe6c3a2f7a59e3fc
