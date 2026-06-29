@@ -1,5 +1,7 @@
-.env
-scripts/authorize.js
-scripts/oauth2.js
 node_modules
-.vscode
+dist
+.DS_Store
+*.vscode
+build
+.env
+src/config.production.js
